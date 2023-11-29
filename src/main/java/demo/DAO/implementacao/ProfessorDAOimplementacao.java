@@ -1,4 +1,4 @@
-package demo.DAO;
+package demo.DAO.implementacao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,10 +10,10 @@ import java.util.List;
 import demo.entidades.Professor;
 import demo.entidades.Curso;
 
-public class ProfessorDAO {
+public class ProfessorDAOimplementacao {
   private Connection conexaoDB;
 
-  public ProfessorDAO(Connection conexaoDB) {
+  public ProfessorDAOimplementacao(Connection conexaoDB) {
     this.conexaoDB = conexaoDB;
   }
 
@@ -61,7 +61,7 @@ public class ProfessorDAO {
     return professorList;
   }
 
-  public List<Curso> listarCursosMinistrado() throws SQLException  {
+  public List<Curso> listarCursosMinistrados() throws SQLException  {
     ArrayList<Curso> cursos = new ArrayList<>();
     
     String query = "SELECT nome_curso, status_curso, carga_horaria AS lista_cursos FROM cursos C INNER JOIN Professor P ON P.id_professor = C.id_professor WHERE id_professor=?";    

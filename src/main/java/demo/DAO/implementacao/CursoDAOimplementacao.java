@@ -1,4 +1,4 @@
-package demo.DAO;
+package demo.DAO.implementacao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,11 +9,11 @@ import java.util.List;
 
 import demo.entidades.Curso;
 
-public class CursoDAO {
+public class CursoDAOimplementacao {
     private String jdbcURL;
     private Connection conexaoDB;
 
-    public CursoDAO(Connection conexaoDB) {
+    public CursoDAOimplementacao(Connection conexaoDB) {
         this.conexaoDB = conexaoDB;
     }
 

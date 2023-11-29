@@ -2,9 +2,9 @@ package demo;
 
 import java.sql.SQLException;
 
-import demo.DAO.AlunoDAO;
-import demo.DAO.CursoDAO;
-import demo.DAO.ProfessorDAO;
+import demo.DAO.implementacao.AlunoDAOimplementacao;
+import demo.DAO.implementacao.CursoDAOimplementacao;
+import demo.DAO.implementacao.ProfessorDAOimplementacao;
 import demo.entidades.Aluno;
 import demo.entidades.Professor;
 import demo.entidades.Curso;
@@ -16,9 +16,9 @@ public class App {
     private static Scanner scanner = new Scanner(System.in);
     private static int opcao = 0;
 
-    private static AlunoDAO alunoDao;
-    private static ProfessorDAO professorDAO;
-    private static CursoDAO cursoDAO;
+    private static AlunoDAOimplementacao alunoDao;
+    private static ProfessorDAOimplementacao professorDAO;
+    private static CursoDAOimplementacao cursoDAO;
 
     public static void main(String[] args) {
         // Conexão com o banco de dados
@@ -26,9 +26,9 @@ public class App {
         Connection conexaoDB = db.retonarConexao();
 
         // Instanciar os DAOs
-        alunoDao = new AlunoDAO(conexaoDB);
-        professorDAO = new ProfessorDAO(conexaoDB);
-        cursoDAO = new CursoDAO(conexaoDB);
+        alunoDao = new AlunoDAOimplementacao(conexaoDB);
+        professorDAO = new ProfessorDAOimplementacao(conexaoDB);
+        cursoDAO = new CursoDAOimplementacao(conexaoDB);
 
         do {
             System.out.println("--------------------------------------------");

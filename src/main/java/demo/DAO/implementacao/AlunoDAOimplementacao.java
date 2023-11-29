@@ -1,4 +1,4 @@
-package demo.DAO;
+package demo.DAO.implementacao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,11 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 import demo.entidades.Aluno;
 
-public class AlunoDAO {
+public class AlunoDAOimplementacao {
     public static Object cadastrarAluno;
     private Connection conexaoDB;
 
-    public AlunoDAO(Connection conexaoDB) {
+    public AlunoDAOimplementacao(Connection conexaoDB) {
         this.conexaoDB = conexaoDB;
     }
 

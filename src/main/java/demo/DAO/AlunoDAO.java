@@ -2,7 +2,13 @@ package demo.DAO;
 
 import java.util.List;
 
-public interface DaoALunoIterface<t>{
-    public int cadastrarAluno(t entidade);
-    public List<t>  listarAlunos();
+import demo.entidades.Aluno;
+
+public interface AlunoDAO{
+    public void cadastrarAluno();
+    public void atualizarAluno();
+    public void matricularAlunoEmCurso();
+    public void cancelarMatriculaAluno();
+    public void gerarRelatorioDesempenho();
+    public List<Aluno> listarAlunos();
 }  
