@@ -5,8 +5,8 @@ import demo.entidades.Curso;
 import demo.entidades.Professor;
 
 public interface  ProfessorDAO{
-    public void cadastrarProfessor();
-    public void atualizarProfessores();
-    public List<Professor> listarProfessor();
-    public List<Curso> listarCursosMinistrados();
+    public void cadastrarProfessor(Professor professor) throws Exception;
+    public void atualizarProfessores(Professor professor) throws Exception;
+    public List<Professor> listarProfessor() throws Exception;
+    public List<Curso> listarCursosMinistrados() throws Exception;
 }

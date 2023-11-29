@@ -7,10 +7,10 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import demo.DAO.CursoDAO;
 import demo.entidades.Curso;
 
-public class CursoDAOimplementacao {
-    private String jdbcURL;
+public class CursoDAOimplementacao implements CursoDAO{
     private Connection conexaoDB;
 
     public CursoDAOimplementacao(Connection conexaoDB) {

@@ -8,21 +8,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 import demo.entidades.Professor;
+import demo.DAO.ProfessorDAO;
 import demo.entidades.Curso;
 
-public class ProfessorDAOimplementacao {
+public class ProfessorDAOimplementacao implements ProfessorDAO{
   private Connection conexaoDB;
 
   public ProfessorDAOimplementacao(Connection conexaoDB) {
     this.conexaoDB = conexaoDB;
   }
 
-  public void cadastrarProfessor(Professor professores) throws SQLException {
+  public void cadastrarProfessor(Professor professor) throws SQLException {
 
     String query = "INSERT INTO professor (nome_professor, email_professor) VALUES (?, ?)";
     try (PreparedStatement preparedStatement = conexaoDB.prepareStatement(query)) {
-      preparedStatement.setString(1, professores.getNome());
-      preparedStatement.setString(2, professores.getEmail());
+      preparedStatement.setString(1, professor.getNome());
+      preparedStatement.setString(2, professor.getEmail());
 
     } catch (SQLException e) {
       e.printStackTrace();

@@ -1,15 +1,16 @@
 package demo.DAO.implementacao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+
+import demo.DAO.AlunoDAO;
 import demo.entidades.Aluno;
 
-public class AlunoDAOimplementacao {
+public class AlunoDAOimplementacao implements AlunoDAO{
     public static Object cadastrarAluno;
     private Connection conexaoDB;
 
@@ -99,5 +100,17 @@ public void gerarRelatorioDesempenho(Aluno aluno) throws SQLException {
             }
         }
     }
+}
+
+@Override
+public void atualizarAluno(int id, Aluno alunoDados) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'atualizarAluno'");
+}
+
+@Override
+public List<Aluno> listarAlunos() throws Exception {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'listarAlunos'");
 } 
 }
