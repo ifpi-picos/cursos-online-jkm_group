@@ -1,11 +1,18 @@
 package demo.entidades;
 
 public class Curso {
+    private int id_curso;
     private String nome;
     private String status;
     private int cargaHoraria;
 
     public Curso(String nome, String status, int cargaHoraria) {
+        this.nome = nome;
+        this.status = status;
+        this.cargaHoraria = cargaHoraria;
+    }
+    public Curso(String nome, String status, int cargaHoraria, int id_curso){
+        this.id_curso = id_curso;
         this.nome = nome;
         this.status = status;
         this.cargaHoraria = cargaHoraria;

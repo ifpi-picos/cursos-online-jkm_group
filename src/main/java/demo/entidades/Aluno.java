@@ -1,6 +1,7 @@
 package demo.entidades;
 
 public class Aluno {
+    private int id_aluno;
     private String nome;
     private String email;
     private String cursosMatriculados;
@@ -8,6 +9,13 @@ public class Aluno {
     private boolean status;
 
     public Aluno(String nome, String email) {
+        this.nome = nome;
+        this.email = email;
+        this.notas = notas;
+        this.status = status;
+    }
+    public Aluno(String nome, String email, int id_aluno){
+        this.id_aluno = id_aluno;
         this.nome = nome;
         this.email = email;
         this.notas = notas;
