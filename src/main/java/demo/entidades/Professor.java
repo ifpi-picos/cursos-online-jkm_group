@@ -5,18 +5,22 @@ public class Professor {
     private String nome;
     private String email;
     private Curso cursos;
+
     
     public Professor(String nome, String email) {
         this.nome = nome;
         this.email = email;
     }
-    
+
     public Professor(String nome, String email, int id_professor){
         this.id_professor = id_professor;
         this.nome = nome;
         this.email = email;
     }
     
+    public int getIdProfessor(){
+        return id_professor;
+    }
     public String getNome() {
         return nome;
     }
@@ -34,10 +38,6 @@ public class Professor {
     }
     public void setCursos(Curso cursos) {
         this.cursos = cursos;
-    }
-
-    public int getCargaHoraria() {
-        return 0;
     }
 
     public int getID(){

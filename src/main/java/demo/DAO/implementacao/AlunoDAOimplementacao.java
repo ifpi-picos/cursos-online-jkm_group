@@ -30,18 +30,19 @@ public class AlunoDAOimplementacao implements AlunoDAO{
     }
 
     public void atualizarAluno(Aluno aluno) throws SQLException {
-        String query = "UPDATE aluno SET nome_aluno=?, email_aluno=?, cursos_matriculados=?";
+        String query = "UPDATE aluno SET nome_aluno=?, email_aluno=?, cursos_matriculados=? WHERE id_aluno=?";
         try (PreparedStatement preparedStatement = conexaoDB.prepareStatement(query)) {
             preparedStatement.setString(1, aluno.getNome());
             preparedStatement.setString(2, aluno.getEmail());
             preparedStatement.setString(3, aluno.getCursosMatriculados());
+            preparedStatement.setInt(4, aluno.getIdAluno());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public List<Aluno> listarAluno() throws SQLException {
+    public List<Aluno> listarAlunos() throws SQLException {
         List<Aluno> alunosList = new ArrayList<>();
 
         String query = "SELECT * FROM aluno";
@@ -101,16 +102,4 @@ public void gerarRelatorioDesempenho(Aluno aluno) throws SQLException {
         }
     }
 }
-
-@Override
-public void atualizarAluno(int id, Aluno alunoDados) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'atualizarAluno'");
-}
-
-@Override
-public List<Aluno> listarAlunos() throws Exception {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'listarAlunos'");
-} 
 }

@@ -36,14 +36,14 @@ public class ProfessorDAOimplementacao implements ProfessorDAO{
     try (PreparedStatement preparedStatement = conexaoDB.prepareStatement(query)) {
       preparedStatement.setString(1, professor.getNome());
       preparedStatement.setString(2, professor.getEmail());
-      preparedStatement.setInt(4, professor.getID());
+      preparedStatement.setInt(4, professor.getIdProfessor());
       preparedStatement.executeUpdate();
     } catch (SQLException e) {
       e.printStackTrace();
     }
   }
 
-  public List<Professor> listarProfessor() throws SQLException {
+  public List<Professor> listarProfessores() throws SQLException {
 
     List<Professor> professorList = new ArrayList<>();
 

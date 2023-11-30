@@ -14,6 +14,7 @@ public class Aluno {
         this.notas = notas;
         this.status = status;
     }
+
     public Aluno(String nome, String email, int id_aluno){
         this.id_aluno = id_aluno;
         this.nome = nome;
@@ -22,6 +23,10 @@ public class Aluno {
         this.status = status;
     }
 
+    public int getIdAluno(){
+        return id_aluno;
+    }
+    
     public String getNome() {
         return nome;
     }

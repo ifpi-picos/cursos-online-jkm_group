@@ -6,7 +6,7 @@ import demo.entidades.Professor;
 
 public interface  ProfessorDAO{
     public void cadastrarProfessor(Professor professor) throws Exception;
-    public void atualizarProfessores(Professor professor) throws Exception;
-    public List<Professor> listarProfessor() throws Exception;
+    public void atualizarProfessor(Professor professor) throws Exception;
+    public List<Professor> listarProfessores() throws Exception;
     public List<Curso> listarCursosMinistrados() throws Exception;
 }

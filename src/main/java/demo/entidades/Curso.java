@@ -11,13 +11,17 @@ public class Curso {
         this.status = status;
         this.cargaHoraria = cargaHoraria;
     }
-    public Curso(String nome, String status, int cargaHoraria, int id_curso){
+
+    public Curso(int id_curso, String nome, String status, int cargaHoraria){
         this.id_curso = id_curso;
         this.nome = nome;
         this.status = status;
         this.cargaHoraria = cargaHoraria;
     }
 
+    public int getIdCurso(){
+        return id_curso;
+    }
     public String getNome() {
         return nome;
     }
@@ -36,8 +40,5 @@ public class Curso {
     public void setCargaHoraria(int cargaHoraria) {
         this.cargaHoraria = cargaHoraria;
     }
-	public int getID() {
-		return 0;
-	}
 
 }

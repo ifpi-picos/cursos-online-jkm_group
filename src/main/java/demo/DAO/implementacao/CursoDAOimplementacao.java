@@ -35,7 +35,7 @@ public class CursoDAOimplementacao implements CursoDAO{
             preparedStatement.setString(1, curso.getNome());
             preparedStatement.setString(2, curso.getStatus());
             preparedStatement.setInt(3, curso.getCargaHoraria());
-            preparedStatement.setInt(4, curso.getID());
+            preparedStatement.setInt(4, curso.getIdCurso());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
