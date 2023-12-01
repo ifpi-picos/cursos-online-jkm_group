@@ -19,24 +19,24 @@ public class ProfessorDAOimplementacao implements ProfessorDAO{
   }
 
   public void cadastrarProfessor(Professor professor) throws SQLException {
-
+    
     String query = "INSERT INTO professor (nome_professor, email_professor) VALUES (?, ?)";
     try (PreparedStatement preparedStatement = conexaoDB.prepareStatement(query)) {
-      preparedStatement.setString(1, professor.getNome());
-      preparedStatement.setString(2, professor.getEmail());
-
+        preparedStatement.setString(1, professor.getNome());
+        preparedStatement.setString(2, professor.getEmail());
+        preparedStatement.executeUpdate();
     } catch (SQLException e) {
-      e.printStackTrace();
+        e.printStackTrace();
     }
-  }
+}
 
-  public void atualizarProfessores(Professor professor) throws SQLException {
+  public void atualizarProfessor(Professor professor) throws SQLException {
 
-    String query = "UPDATE professor SET (nome_professor=?, email_professor=?, WHERE id_professor=?";
+    String query = "UPDATE professor SET nome_professor=?, email_professor=? WHERE id_professor=?";
     try (PreparedStatement preparedStatement = conexaoDB.prepareStatement(query)) {
       preparedStatement.setString(1, professor.getNome());
       preparedStatement.setString(2, professor.getEmail());
-      preparedStatement.setInt(4, professor.getIdProfessor());
+      preparedStatement.setInt(3, professor.getIdProfessor());
       preparedStatement.executeUpdate();
     } catch (SQLException e) {
       e.printStackTrace();
@@ -52,6 +52,7 @@ public class ProfessorDAOimplementacao implements ProfessorDAO{
       try (ResultSet resultSet = preparedStatement.executeQuery()) {
         while (resultSet.next()) {
           Professor professor = new Professor(
+              resultSet.getInt("id_professor"),
               resultSet.getString("nome_professor"),
               resultSet.getString("email_professor")
           );
@@ -69,7 +70,10 @@ public class ProfessorDAOimplementacao implements ProfessorDAO{
     try (PreparedStatement preparedStatement = conexaoDB.prepareStatement(query)) {
         try (ResultSet resultSet = preparedStatement.executeQuery()) {
             while (resultSet.next()) {
-                Curso curso = new Curso(resultSet.getString("nome_curso"), resultSet.getString("status_curso"), resultSet.getInt("carga_horaria"));
+                Curso curso = new Curso(
+                resultSet.getString("nome_curso"),
+                resultSet.getString("status_curso"),
+                resultSet.getInt("carga_horaria"));
                 cursos.add(curso);  
             } 
         }

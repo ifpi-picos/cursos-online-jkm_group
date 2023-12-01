@@ -33,7 +33,7 @@ public class App {
         do {
             System.out.println("--------------------------------------------");
             System.out.println("| ->          Sistema acadêmico         <- |");
-            System.out.println("| 1 - Acessar o sistema.                   |");
+            System.out.println("| 1 - Acessar o sistema (aluno).           |");
             System.out.println("| 2 - Cadastrar na plataforma.             |");
             System.out.println("--------------------------------------------");
 

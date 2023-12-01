@@ -50,6 +50,7 @@ public class CursoDAOimplementacao implements CursoDAO{
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 while (resultSet.next()) {
                     Curso curso = new Curso(
+                            resultSet.getInt("id_curso"),
                             resultSet.getString("nome_curso"),
                             resultSet.getString("status_curso"),
                             resultSet.getInt("carga_horaria"));
@@ -89,5 +90,59 @@ public class CursoDAOimplementacao implements CursoDAO{
                 }
             }
         }
+    }
+
+    public int contarAlunosMatriculados(int id_curso) throws SQLException {
+        String query = "SELECT COUNT(*) AS total_alunos FROM matricula WHERE id_curso=?";
+        try (PreparedStatement preparedStatement = conexaoDB.prepareStatement(query)) {
+            preparedStatement.setInt(1, id_curso);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    return resultSet.getInt("total_alunos");
+                }
+            }
+        }
+        return 0;
+    }
+
+    public double calcularMediaGeral() throws SQLException {
+        String query = "SELECT AVG(nota) AS media_geral FROM notas";
+        try (PreparedStatement preparedStatement = conexaoDB.prepareStatement(query)) {
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    return resultSet.getDouble("media_geral");
+                }
+            }
+        }
+        return 0;
+    }
+
+    public double calcularPorcentagemAprovados() throws SQLException {
+        String query = "SELECT COUNT(*) AS total_aprovados FROM notas WHERE nota >= 7";
+        try (PreparedStatement preparedStatement = conexaoDB.prepareStatement(query)) {
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    int totalAprovados = resultSet.getInt("total_aprovados");
+                    return ((double) totalAprovados / getTotalAlunos()) * 100;
+                }
+            }
+        }
+        return 0;
+    }
+
+    public double calcularPorcentagemReprovados() throws SQLException {
+        return 100 - calcularPorcentagemAprovados();
+    }
+
+    private int getTotalAlunos() throws SQLException {
+        String query = "SELECT COUNT(*) AS total_alunos FROM aluno";
+        try (PreparedStatement preparedStatement = conexaoDB.prepareStatement(query)) {
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    return resultSet.getInt("total_alunos");
+                }
+            }
+        }
+        return 0;
     }
 }
