@@ -1,26 +1,18 @@
 package demo.entidades;
 
 public class Curso {
-    private int id_curso;
+    private int id;
     private String nome;
     private String status;
     private int cargaHoraria;
+    private Professor ministrante;
 
-    public Curso(String nome, String status, int cargaHoraria) {
-        this.nome = nome;
-        this.status = status;
-        this.cargaHoraria = cargaHoraria;
+    public int getId() {
+        return this.id;
     }
 
-    public Curso(int id_curso, String nome, String status, int cargaHoraria){
-        this.id_curso = id_curso;
-        this.nome = nome;
-        this.status = status;
-        this.cargaHoraria = cargaHoraria;
-    }
-
-    public int getIdCurso(){
-        return id_curso;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -45,6 +37,14 @@ public class Curso {
 
     public void setCargaHoraria(int cargaHoraria) {
         this.cargaHoraria = cargaHoraria;
+    }
+
+    public Professor getMinistrante() {
+        return ministrante;
+    }
+
+    public void setMinistrante(Professor ministrante) {
+        this.ministrante = ministrante;
     }
 
 }

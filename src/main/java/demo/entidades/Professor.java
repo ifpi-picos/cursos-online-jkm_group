@@ -1,30 +1,20 @@
 package demo.entidades;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Professor {
-    private int id_professor;
+    private int id;
     private String nome;
     private String email;
+    private String senha;
     private List<Curso> cursos;
 
-    
-    public Professor(String nome, String email) {
-        this.nome = nome;
-        this.email = email;
-        this.cursos = new ArrayList<>();
+    public int getId() {
+        return this.id;
     }
 
-    public Professor(int id_professor, String nome, String email){
-        this.id_professor = id_professor;
-        this.nome = nome;
-        this.email = email;
-        this.cursos = new ArrayList<>();
-    }
-    
-    public int getIdProfessor(){
-        return id_professor;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -43,11 +33,19 @@ public class Professor {
         this.email = email;
     }
 
-    public void adicionarCurso(Curso curso) {
-        this.cursos.add(curso);
+    public String getSenha() {
+        return senha;
     }
 
-    public void removerCurso(Curso curso) {
-        this.cursos.remove(curso);
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public List<Curso> getCursos() {
+        return this.cursos;
+    }
+
+    public void setCursos(List<Curso> cursos) {
+        this.cursos = cursos;
     }
 }

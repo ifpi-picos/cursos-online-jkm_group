@@ -1,30 +1,19 @@
 package demo.entidades;
 
 public class Aluno {
-    private int id_aluno;
+    private int id;
     private String nome;
     private String email;
-    private String cursosMatriculados;
-    private double notas;
-    private boolean status;
+    private String senha;
 
-    public Aluno(String nome, String email) {
-        this.nome = nome;
-        this.email = email;
+    public int getId() {
+        return this.id;
     }
 
-    public Aluno(int id_aluno, String nome, String email, double notas, boolean status){
-        this.id_aluno = id_aluno;
-        this.nome = nome;
-        this.email = email;
-        this.notas = notas;
-        this.status = status;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public int getIdAluno(){
-        return id_aluno;
-    }
-    
     public String getNome() {
         return nome;
     }
@@ -41,27 +30,11 @@ public class Aluno {
         this.email = email;
     }
 
-    public String getCursosMatriculados() {
-        return cursosMatriculados;
+    public String getSenha() {
+        return senha;
     }
 
-    public void setCursosMatriculados(String cursosMatriculados) {
-        this.cursosMatriculados = cursosMatriculados;
-    }
-
-    public double getNotas() {
-        return notas;
-    }
-
-    public void setNotas(double notas) {
-        this.notas = notas;
-    }
-
-    public boolean isStatus() {
-        return status;
-    }
-
-    public void setStatus(boolean status) {
-        this.status = status;
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 }

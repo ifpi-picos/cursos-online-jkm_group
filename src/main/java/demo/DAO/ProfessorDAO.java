@@ -1,13 +1,19 @@
 package demo.DAO;
 
-import java.sql.SQLException;
 import java.util.List;
-import demo.entidades.Curso;
-import demo.entidades.Professor;
 
-public interface  ProfessorDAO{
-    public void cadastrarProfessor(Professor professor) throws SQLException;
-    public void atualizarProfessor(Professor professor) throws SQLException;
-    public List<Professor> listarProfessores() throws SQLException;
-    public List<Curso> listarCursosMinistrados() throws SQLException;
+import demo.entidades.Professor;
+import demo.excecoes.NotFoundException;
+import demo.excecoes.UnauthorizedException;
+
+public interface ProfessorDAO {
+    public void cadastrar(Professor professorDados);
+
+    public void atualizar(int id, Professor professorDados);
+
+    public Professor autenticar(String email, String senha) throws UnauthorizedException;
+
+    public Professor obterPorId(int id) throws NotFoundException;
+
+    public List<Professor> obterTodos();
 }
