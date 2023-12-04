@@ -12,10 +12,10 @@ import demo.entidades.Curso;
 import demo.entidades.Professor;
 import demo.excecoes.NotFoundException;
 
-public class CursoDAOimplementacao implements CursoDAO {
+public class CursoDAOImplementacao implements CursoDAO {
     private Connection conexaoDB;
 
-    public CursoDAOimplementacao(Connection conexaoDB) {
+    public CursoDAOImplementacao(Connection conexaoDB) {
         this.conexaoDB = conexaoDB;
     }
 

@@ -12,10 +12,10 @@ import demo.entidades.Professor;
 import demo.excecoes.NotFoundException;
 import demo.excecoes.UnauthorizedException;
 
-public class ProfessorDAOimplementacao implements ProfessorDAO {
+public class ProfessorDAOImplementacao implements ProfessorDAO {
   private Connection conexaoDB;
 
-  public ProfessorDAOimplementacao(Connection conexaoDB) {
+  public ProfessorDAOImplementacao(Connection conexaoDB) {
     this.conexaoDB = conexaoDB;
   }
 
