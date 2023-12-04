@@ -12,10 +12,10 @@ import demo.entidades.Aluno;
 import demo.excecoes.NotFoundException;
 import demo.excecoes.UnauthorizedException;
 
-public class AlunoDAOImplementacao implements AlunoDAO {
+public class AlunoDAOimplementacao implements AlunoDAO {
     private Connection conexaoDB;
 
-    public AlunoDAOImplementacao(Connection conexaoDB) {
+    public AlunoDAOimplementacao(Connection conexaoDB) {
         this.conexaoDB = conexaoDB;
     }
 
