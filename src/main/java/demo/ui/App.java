@@ -8,10 +8,10 @@ import demo.DAO.AlunoDAO;
 import demo.DAO.CursoDAO;
 import demo.DAO.MatriculaDAO;
 import demo.DAO.ProfessorDAO;
-import demo.DAO.implementacao.AlunoDAOImplementacao;
-import demo.DAO.implementacao.CursoDAOImplementacao;
+import demo.DAO.implementacao.AlunoDAOimplementacao;
+import demo.DAO.implementacao.CursoDAOimplementacao;
 import demo.DAO.implementacao.MatriculaDAOImplementacao;
-import demo.DAO.implementacao.ProfessorDAOImplementacao;
+import demo.DAO.implementacao.ProfessorDAOimplementacao;
 import demo.entidades.Aluno;
 import demo.entidades.Professor;
 import demo.enums.Perfil;
@@ -32,9 +32,9 @@ public class App {
         Connection conexaoDB = db.retonarConexao();
 
         // Instanciar os DAOs
-        alunoDAO = new AlunoDAOImplementacao(conexaoDB);
-        professorDAO = new ProfessorDAOImplementacao(conexaoDB);
-        cursoDAO = new CursoDAOImplementacao(conexaoDB);
+        alunoDAO = new AlunoDAOimplementacao(conexaoDB);
+        professorDAO = new ProfessorDAOimplementacao(conexaoDB);
+        cursoDAO = new CursoDAOimplementacao(conexaoDB);
         matriculaDAO = new MatriculaDAOImplementacao(conexaoDB);
 
         do {
